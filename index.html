@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokémon Card Collection Tracker</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1>Pokémon Card Collection Tracker</h1>
+            <p>Track your illustration rare and special illustration rare cards</p>
+        </div>
+    </header>
+    
+    <main class="container">
+        <!-- Stats Section -->
+        <div class="stats-section">
+            <h2>Collection Stats</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <p class="stat-label">Total Cards</p>
+                    <p class="stat-value" id="total-cards">0</p>
+                </div>
+                <div class="stat-card">
+                    <p class="stat-label">Owned Cards</p>
+                    <p class="stat-value" id="owned-cards">0</p>
+                </div>
+                <div class="stat-card">
+                    <p class="stat-label">Completion</p>
+                    <p class="stat-value" id="completion">0%</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Filters Section -->
+        <div class="filters-section">
+            <h2>Filters</h2>
+            <div class="filters-grid">
+                <div class="filter">
+                    <label for="set-filter">Set</label>
+                    <select id="set-filter">
+                        <option value="all">All Sets</option>
+                        <!-- Sets will be populated by JavaScript -->
+                    </select>
+                </div>
+                <div class="filter">
+                    <label for="ownership-filter">Ownership</label>
+                    <select id="ownership-filter">
+                        <option value="all">All Cards</option>
+                        <option value="owned">Owned Cards</option>
+                        <option value="not-owned">Not Owned Cards</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Cards Section -->
+        <div class="cards-section">
+            <h2>Cards (<span id="card-count">0</span>)</h2>
+            <div id="loading-message">Loading cards from Pokémon TCG API...</div>
+            <div id="no-cards-message" style="display: none;">No cards match your filters</div>
+            <div id="cards-grid" class="cards-grid">
+                <!-- Cards will be populated by JavaScript -->
+            </div>
+        </div>
+    </main>
+    
+    <footer class="footer">
+        <div class="container">
+            <p>Pokémon Card Collection Tracker © 2025</p>
+            <p class="disclaimer">
+                This website is not produced, endorsed, supported, or affiliated with Nintendo or The Pokémon Company.
+            </p>
+            <p class="api-credit">
+                Card data provided by the <a href="https://pokemontcg.io/" target="_blank">Pokémon TCG API</a>
+            </p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
